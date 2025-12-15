@@ -15,7 +15,7 @@ public class Sudokus {
          for (int c = 0; c < cantidad; c++) {
              char[][] sudoku = Lectura();
 
-          
+
              if (c < cantidad - 1) {
                  tc.nextLine();
              }
