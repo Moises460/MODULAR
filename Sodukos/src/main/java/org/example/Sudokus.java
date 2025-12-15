@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
+
 public class Sudokus {
      static void main(String[]args){
          Scanner tc=new Scanner(System.in);
@@ -10,11 +11,11 @@ public class Sudokus {
          int cantidad = Integer.parseInt(tc.nextLine().trim());
 
          System.out.println("ITRODUZCA EL SUDOKUS");
-         tc.nextLine();   // Saltar línea en blanco antes del primer Sudoku
+         tc.nextLine();
          for (int c = 0; c < cantidad; c++) {
              char[][] sudoku = Lectura();
 
-             // Saltar línea en blanco entre Sudokus (excepto el último)
+          
              if (c < cantidad - 1) {
                  tc.nextLine();
              }
