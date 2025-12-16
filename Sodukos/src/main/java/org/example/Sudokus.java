@@ -107,6 +107,52 @@ public class Sudokus {
         boolean simetrico = Comprobar_simetria(sudoku);
         return llenas <= 32 && simetrico;
     }
+<<<<<<< HEAD
+=======
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> d5e8ba4cacf648979acd79dd64a35feea08f68a6
 }
 
 
