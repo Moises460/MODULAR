@@ -22,8 +22,9 @@ public class Sudokus {
 
         Scanner tc = new Scanner(System.in);
         int cantidad;
-
-        System.out.println("SUDOKUS");
+        System.out.println("*-----------------------------------*");
+        System.out.println("              SUDOKUS");
+        System.out.println("*-----------------------------------*");
         System.out.println("¿CUANTOS SUDOKUS QUIERES COMPROBAR?");
 
         while (!tc.hasNextInt()) {
