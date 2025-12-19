@@ -1,9 +1,49 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
+import java.util.Scanner;
 
+public class Sudokus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int cantidad = sc.nextInt();
+        sc.nextLine(); // limpiar buffer
+
+        for (int t = 0; t < cantidad; t++) {
+            char[][] sudoku = new char[9][9];
+
+            // Lectura del Sudoku
+            for (int i = 0; i < 9; i++) {
+                String fila = sc.nextLine();
+                for (int j = 0; j < 9; j++) {
+                    sudoku[i][j] = fila.charAt(j);
+                }
+            }
+
+            // Contar casillas rellenas
+            int rellenas = 0;
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (sudoku[i][j] != '-') rellenas++;
+                }
+            }
+
+            // Comprobar simetría
+            boolean simetrico = true;
+            for (int i = 0; i < 9 && simetrico; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if ((sudoku[i][j] == '-') != (sudoku[8 - i][8 - j] == '-')) {
+                        simetrico = false;
+                        break;
+                    }
+                }
+            }
+
+            // Validación final
+            if (rellenas <= 32 && simetrico) {
+                System.out.println("SI");
+            } else {
+                System.out.println("NO");
+            }
+        }
     }
 }
