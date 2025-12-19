@@ -61,7 +61,7 @@ public class Sudokus {
      * Cada fila debe tener exactamente 9 caracteres, que pueden ser '1'-'9' o '-'.
      *
      * @param tc Scanner para leer la entrada del usuario
-     * @return un arreglo 9x9 de caracteres representando el Sudoku
+     * @return devuelve el tablero completo
      */
     public static char[][] Lectura(Scanner tc) {
         char[][] sudoku = new char[9][9];
@@ -79,7 +79,8 @@ public class Sudokus {
                 }
                 validar_fila = true;
 
-                // Validación de caracteres permitidos
+                // CONTROLA LOS CARATERES QUE INTROCDUCES
+                // ADMITE NUMERO ESNTRE 1 Y 9 Y '-'
                 for (int j = 0; j < 9; j++) {
                     char control = fila.charAt(j);
                     if (!(control >= '1' && control <= '9') && control != '-') {
@@ -89,7 +90,7 @@ public class Sudokus {
                     }
                 }
 
-                // Guardar fila en el arreglo si es válida
+                // GUARDA LAS FILAS SI SON VALIDAS
                 if (validar_fila) {
                     for (int j = 0; j < 9; j++) {
                         sudoku[i][j] = fila.charAt(j);
@@ -120,10 +121,9 @@ public class Sudokus {
 
     /**
      * Comprueba si las casillas vacías ('-') del Sudoku son simétricas
-     * respecto al centro del tablero.
      *
      * @param sudoku el tablero de Sudoku
-     * @return true si es simétrico, false en caso contrario
+     * @return true si es simétrico,  false en caso de que no sea
      */
     public static boolean Comprobar_simetria(char[][] sudoku) {
         for (int i = 0; i < 9; i++) {
@@ -137,12 +137,12 @@ public class Sudokus {
     }
 
     /**
-     * Valida un Sudoku según las reglas del programa:
+     * Valida un Sudoku :
      * - Tener como máximo 32 casillas rellenas
-     * - Ser simétrico respecto al centro
+     * - Ser simétrico
      *
      * @param sudoku el tablero de Sudoku
-     * @return true si cumple ambas condiciones, false en caso contrario
+     * @return true si cumple ambas condiciones, false en caso de que no sea
      */
     public static boolean Validador(char[][] sudoku) {
         int corectas = Contarlinea(sudoku);

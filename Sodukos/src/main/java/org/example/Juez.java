@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class Sudokus {
+public class Juez {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int cantidad = sc.nextInt();
