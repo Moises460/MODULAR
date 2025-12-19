@@ -27,9 +27,37 @@ class SudokusTest {
 
     @Test
     void comprobar_simetria() {
+        char[][] prueba = {
+                {'1','-','-','-','-','-','-','-','2'},
+                {'-','-','-','-','-','-','-','-','-'},
+                {'-','-','-','-','-','-','-','-','-'},
+                {'-','-','-','-','-','-','-','-','-'},
+                {'-','-','-','-','-','-','-','-','-'},
+                {'-','-','-','-','-','-','-','-','-'},
+                {'-','-','-','-','-','-','-','-','-'},
+                {'-','-','-','-','-','-','-','-','-'},
+                {'2','-','-','-','-','-','-','-','1'}
+        };
+
+        assertTrue(Sudokus.Comprobar_simetria(prueba));
     }
+
 
     @Test
     void validador() {
+        char[][] prueba = new char[9][9];
+
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                prueba[i][j] = '-';
+            }
+        }
+
+        // Colocar números simétricos
+        prueba[0][0] = '1';
+        prueba[8][8] = '1';
+
+        assertTrue(Sudokus.Validador(prueba));
     }
 }

@@ -14,12 +14,12 @@ public class Sudokus {
 
         while (!valido) {
             if (tc.hasNextInt()) {
-                cantidad = tc.nextInt(); // Leer directamente el entero
-                tc.nextLine(); // Limpiar el salto de línea
+                cantidad = tc.nextInt();
+                tc.nextLine();
                 valido = true;
             } else {
                 System.out.println("SOLO SE ADMITE NUMEROS");
-                tc.nextLine(); // Limpiar la entrada incorrecta
+                tc.nextLine();
             }
         }
 
@@ -55,7 +55,7 @@ public class Sudokus {
 
 
                 if (fila.length() != 9) {
-                    System.out.println("La fila debe tener exactamente 9 caracteres.");
+                    System.out.println("FILA NO VALIDA 9 CARACTERES MAXIMO");
                     continue;
                 }
                 validar_fila = true;
@@ -63,7 +63,7 @@ public class Sudokus {
                 for (int j = 0; j < 9; j++) {
                     char control = fila.charAt(j);
                     if (!(control >= '1' && control <= '9') && control != '-') {
-                        System.out.println("Solo se permiten números del 1 al 9 o '-'");
+                        System.out.println("SOLO SE ADMINTE NUMEROS DEL 1 AL 9 Y '-'");
                         validar_fila = false;
                         break;
                     }
@@ -103,9 +103,9 @@ public class Sudokus {
     }
 
     public static boolean Validador(char[][] sudoku) {
-        int llenas = Contarlinea(sudoku);
+        int corectas = Contarlinea(sudoku);
         boolean simetrico = Comprobar_simetria(sudoku);
-        return llenas <= 32 && simetrico;
+        return corectas <= 32 && simetrico;
     }
 }
 
