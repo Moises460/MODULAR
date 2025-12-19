@@ -53,7 +53,7 @@ class SudokusTest {
                 prueba[i][j] = '-';
             }
         }
-        
+
         prueba[0][0] = '1';
         prueba[8][8] = '1';
 

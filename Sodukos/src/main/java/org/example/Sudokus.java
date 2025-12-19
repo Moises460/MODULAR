@@ -26,7 +26,7 @@ public class Sudokus {
         System.out.println("SUDOKUS");
         System.out.println("¿CUANTOS SUDOKUS QUIERES COMPROBAR?");
 
-        // Validación de que se ingrese un número entero
+       
         while (!valido) {
             if (tc.hasNextInt()) {
                 cantidad = tc.nextInt();
@@ -44,7 +44,7 @@ public class Sudokus {
             System.out.println("INTRODUZCA LOS SUDOKUS");
         }
 
-        // Lectura y validación de cada Sudoku
+
         for (int i = 0; i < cantidad; i++) {
             char[][] sudoku = Lectura(tc);
 
