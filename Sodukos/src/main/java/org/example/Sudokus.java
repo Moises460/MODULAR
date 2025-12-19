@@ -61,7 +61,7 @@ public class Sudokus {
      * Cada fila debe tener exactamente 9 caracteres, que pueden ser '1'-'9' o '-'.
      *
      * @param tc Scanner para leer la entrada del usuario
-     * @return devuelve el tablero completo
+     * @return devuelve el tablero completo  
      */
     public static char[][] Lectura(Scanner tc) {
         char[][] sudoku = new char[9][9];
