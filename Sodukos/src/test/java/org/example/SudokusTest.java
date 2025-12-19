@@ -54,7 +54,6 @@ class SudokusTest {
             }
         }
 
-        // Colocar números simétricos
         prueba[0][0] = '1';
         prueba[8][8] = '1';
 

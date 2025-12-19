@@ -11,9 +11,18 @@ public class Juez {
         for (int t = 0; t < cantidad; t++) {
             char[][] sudoku = new char[9][9];
 
-            // Lectura del Sudoku
+            // Lectura del Sudoku (robusta)
             for (int i = 0; i < 9; i++) {
-                String fila = sc.nextLine();
+                String fila = sc.nextLine().trim();
+
+                // Saltar líneas vacías
+                while (fila.isEmpty()) {
+                    fila = sc.nextLine().trim();
+                }
+
+                // Eliminar espacios si los hay
+                fila = fila.replace(" ", "");
+
                 for (int j = 0; j < 9; j++) {
                     sudoku[i][j] = fila.charAt(j);
                 }
