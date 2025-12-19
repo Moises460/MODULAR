@@ -13,7 +13,7 @@ public class Sudokus {
 
     /**
      * Método principal del programa.
-     * Pide al usuario la cantidad de Sudokus a verificar,
+     * Pide al usuario cuantos  Sudokus hay para  verificar,
      * lee cada Sudoku, y valida si cumple las condiciones.
      *
      * @param args argumentos de línea de comandos (no se utilizan)
@@ -26,7 +26,7 @@ public class Sudokus {
         System.out.println("SUDOKUS");
         System.out.println("¿CUANTOS SUDOKUS QUIERES COMPROBAR?");
 
-       
+
         while (!valido) {
             if (tc.hasNextInt()) {
                 cantidad = tc.nextInt();
