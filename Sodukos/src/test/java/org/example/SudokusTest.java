@@ -53,8 +53,7 @@ class SudokusTest {
                 prueba[i][j] = '-';
             }
         }
-
-        // Colocar números simétricos
+        
         prueba[0][0] = '1';
         prueba[8][8] = '1';
 

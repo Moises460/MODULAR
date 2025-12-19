@@ -4,41 +4,41 @@ import java.util.Scanner;
 
 public class Juez {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int cantidad = sc.nextInt();
-        sc.nextLine(); // limpiar buffer
+        Scanner tc = new Scanner(System.in);
+        int cantidad = tc.nextInt();
 
-        for (int t = 0; t < cantidad; t++) {
+
+        for (int i = 0; i < cantidad; i++) {
             char[][] sudoku = new char[9][9];
 
-            // Lectura del Sudoku
-            for (int i = 0; i < 9; i++) {
-                String fila = sc.nextLine();
+
+            for (int n = 0; n < 9; n++) {
+                String fila = tc.nextLine();
                 for (int j = 0; j < 9; j++) {
-                    sudoku[i][j] = fila.charAt(j);
+                    sudoku[j][j] = fila.charAt(j);
                 }
             }
 
-            // Contar casillas rellenas
+
             int rellenas = 0;
-            for (int i = 0; i < 9; i++) {
+            for (int n = 0; n < 9; n++) {
                 for (int j = 0; j < 9; j++) {
-                    if (sudoku[i][j] != '-') rellenas++;
+                    if (sudoku[n][j] != '-') rellenas++;
                 }
             }
 
-            // Comprobar simetría
+
             boolean simetrico = true;
-            for (int i = 0; i < 9 && simetrico; i++) {
+            for (int n = 0; n < 9 && simetrico; n++) {
                 for (int j = 0; j < 9; j++) {
-                    if ((sudoku[i][j] == '-') != (sudoku[8 - i][8 - j] == '-')) {
+                    if ((sudoku[n][j] == '-') != (sudoku[8 - n][8 - j] == '-')) {
                         simetrico = false;
                         break;
                     }
                 }
             }
 
-            // Validación final
+
             if (rellenas <= 32 && simetrico) {
                 System.out.println("SI");
             } else {
